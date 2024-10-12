@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="login.css">
+   <!-- <script src="confirm.js"></script>-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="icon" href="echomix.jpeg" type="image/x-icon">
+   
+    <style>
+        body{
+            background-image: url(backgroundlogin.png);
+            
+            background-size: cover;
+            width: fit-content;
+            text-align: center;
+            display:inline-block;
+            margin-left:23%;
+            
+        }
+        h2{
+            color:white;
+        }
+
+        footer{
+            margin-bottom: 10px;
+            align-items: end;
+        }
+        #button{
+        
+            height: 35px;
+            width: 200px;
+            background: #fff;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+            cursor: pointer;
+            font-size: 16px;
+            color: black;
+            font-weight: 600;
+
+        }
+        #button:hover{
+            opacity: 60%;
+        }
+       #ee{
+        color: black;
+       }
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: rgb(8, 125, 227);"><img src="logo.jpeg" style="height:140px; width: 160px; border-radius: 50%;"Linked></h1>
+        <h2 id="bb">
+            One stop destination for all your music requirements!
+        </h2>
+    </header>
+    <main>
+        <form class="form" id="aa">
+        <p1 style="font-size: 20px; color: white;" ><b>Full Name</b></p1><br>
+        <input type="text" placeholder="Enter Your Full Name" required size="35px" id="input"><br><br>  
+
+        <p1 style="font-size: 20px;color: white;"><b>User Name</b></p1><br>
+        <input type="text" placeholder="Enter User Name" required size="35px" id="input"><br><br>
+
+        <p1 style="font-size: 20px; color: white;" ><b>Email</b></p1><br>
+        <input type="email" placeholder="xyz123@gmail.com" required size="35px" id="input"><br><br>
+        
+        
+        <p1 style="font-size: 20px; color: white;"><b>Password</b></p1><br>
+        <input type="password" placeholder="Password"required size="27px" id="password">
+        <input type="checkbox" onclick="show1()">Show<br><br>
+
+        <script>
+            function show1() {
+             var x = document.getElementById("password");
+                if (x.type === "password") {
+               x.type = "text";
+             } else {
+             x.type = "password";
+                }
+            }
+        </script>
+
+        <p1 style="font-size: 20px; color: white;"><b>Confirm Password</b></p1><br>
+        <input type="password" placeholder="Confirm Password" required size="27px" id="confirm_password"> 
+        <input type="checkbox" onclick="show2()"><b>Show</b><br><br><br>
+
+
+        <script>
+            function show2() {
+             var x = document.getElementById("confirm_password");
+                if (x.type === "password") {
+               x.type = "text";
+             } else {
+             x.type = "password";
+                }
+            }
+        </script>
+        
+        
+        <input type="checkbox" required>
+        <p1 style="font-size: 23px; " id="ee"><b>You agree to the ECHOMIX</b> <b>User Agreement,Privacy Policy</b> and <b>Cookie Policy.</b></p1><br><br>
+        
+        <div class="submit">
+            <!--<input id="button" type ="submit" value="Login "  ><br><br>-->
+            <button type="submit" id="button" onclick="window.location.href='wdaproject.html'" ><b>Sign up</b></button>
+        </div><br>
+        <p1 id="dd" style="font-size: 20px;">Already on Echomix? <a href="login.html" id="a">Sign in</a></p1>
+        
+        
+        </form><br>
+        
+        <footer><p1 id="cc"><br><br>
+           <b ><big>ECHOMIX ©️ 2024</big></b>
+        </p1>
+        </footer>
+
+    </main>
+
+</body>
+</html>

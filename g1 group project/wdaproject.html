@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EchoMix</title>
+    <link rel="icon" href="logo.jpeg" type="image/x-icon">
+    <style>
+        body{
+            height:vh;
+            width: vh;
+            background-image: linear-gradient(rgb(90,5,90),black,rgb(27,27,107));
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            overflow-y: scroll;
+        }
+        #body::-webkit-scrollbar{
+            display: none;
+        }
+        #main{
+            position: absolute;
+            display: flex;
+            margin-top: 20px;
+            height: 75px;
+            width: 99%;
+            background-color: rgb(188,181,181);
+            border-radius: 10px;
+            background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3cd770b2-3e49-4672-99fb-8483b9dd9bf0/dg2jzjx-09688ae9-5e0c-4ee5-9d25-7883937eae3f.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNjZDc3MGIyLTNlNDktNDY3Mi05OWZiLTg0ODNiOWRkOWJmMFwvZGcyanpqeC0wOTY4OGFlOS01ZTBjLTRlZTUtOWQyNS03ODgzOTM3ZWFlM2YucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.iwFvYJ7UOMKb8rYfAhGxBG3-yCOrw4qixMtg7SLAlXI);
+            background-size: cover;
+        }
+        #searchBar{
+            position: absolute;
+            
+            left: 79%;
+            translate: -100%;
+            margin-top:24px;
+            height: 20px;
+            width: 300px;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        #searchButton{
+            position: absolute;
+            left: 78%;
+            margin-top: 26px;
+            height: 22px;
+            border-radius: 5px;
+            border-color: white;
+            width: 24px;
+            translate: -9px;
+            background-color: white;
+            font-size:small;
+            cursor: pointer;
+            background-size:cover;
+        }
+        #logo{
+            position: absolute;
+            height:65px;
+            width: 65px;
+            border-radius: 50%;
+            background-color: white;
+            margin-top: 5px;
+            left: 2%;
+            background-image: url("logo.jpeg");
+            background-size: cover;
+        }
+        #logoname{
+            position: absolute;
+            left: 8%;
+            margin-top:3px ;
+            font-size: 45px;
+            font-style: italic;
+            font-weight: bold;
+            margin-top: 17px;
+            color: rgb(0, 0, 0);
+            backdrop-filter: blur(2px);
+            
+        }
+        #profileButton{
+            position:absolute;
+            left: 95%;
+            background-color: white;
+            height: 50px;
+            width: 55px;
+            margin-top: 9px;
+            border-radius: 50%;
+            background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAACUCAMAAAANv/M2AAAAM1BMVEXk5ueutLenrrHg4uTn6eqqsLSxt7rKztDq7O3Hy83X2tvQ09XT1tjBxsi5vsHd4OGjqa6G6AVlAAAEW0lEQVR4nO2c6XKzOgyGbSMveOX+r/Yz5CRNcih4w3JneP6k05lM32qEZGuBkJubm5ubm5ubm5ubm5u/BKxgi0hlVToFbeUcMXpaf4Wt6QSAYGdHGWN8JX4IL+00ss0VMU5QTj/h1Ds7qrlBSUF3if+GMGpA2UAM+7bxO4yb4awN1h9J3mR7PZRqIPOJ4s1LhMQW+gZMPkHzih/G1qDPPOPH2GzCVvsflqVqXmXbIYxtku38YADVYDM1U4oeREDn+MaDZcJVDVO2nSMCWXVqrPvEYUqGucTQMYQgZhmwRZIjLOA5yC+nugS8QpIMssw5NlMbJFOr/Gj3g0DS7Co0UzqjmDpUaaY+IGguDXdP4k0GgbK88iPa95dcHqOfMAT/qPSOaGqER7E8sbzonmBCTZB+sPTWXJMNn3DZ2T9UZezY6H0AqUrhT0RnS0MT0Z2DXnqp44i+V1wwLTTTvudTlVK7O6dv+Kg8lj7pmxObRLx4K79F36Jv0TWi/2T0qL4CbPSN05BbSd+nc8WmwR2Adi+vw9JAs+jcNfqT5+k/eXPJ7mntwG1nzSTUi+5+GyfktIF/iuhfWK+vMPWuIKwNxFpD896SV2qrphh9OZCVlsbpkdeVID3KEIWqK+chtbegRjRSdyueT8sPIAxvfqI4wXC0ji2BUPwsYkkmFWEPpR33osxBUOc9CuvUWJHjxVQgGnvwihCd+zD2rv/vknncE+gTbhsh52bOEQeBPkn3kN4X8N8B4hIjH3Ks+8L+bxVgxzNE9+v3MRD8WcRmCAMeZyh9mB2FD2hnpANAGS92dXMunB511wWINp5/uwnjXobhNi/eiNKCdXRh2/oIY8sinJnG34SK3q1UlG6MsSH+PL7elW0/DtQKjL8rB6tZ1w05Y+S2JCelNNbqMMGQBl8NG53Zi8gzZPxEOyG8k3ogV9n2D7V0bGH8KE5zvjAx2+nxDVzJ5LF/eKj3TXkMf85ozP1EgCB39g/PhHPhZ0tQ0iMoIkVFNc+F3h4e/5z2h+uH5zA6Tx2TTnRkeXqmS4BTpzttvABot38uKpHtu+yDqqnNAMILb69+JoG08ItPGNdXWhvCnBiQ8+DOXhW5Qcn63uFvuGuMDbXtrGPEBa4NIJs78yfMty7jwNT+AfyGU91W8/FNu5nquaFm1WaGN4F2e+XgLneNJ632ymHqp3mlSSV46uHO77TomV8anffgujZiwyV5+5il1kN6+8aDOg9pfAxNRVSkmdo9yQrV5Zorpgwq4aW9GWgzBFsGKx2t7h7sPigKIdBm/6YUXjLjVD93V6u65MiHE6HfVWf30Ave6tKc7FlUha85ezircuauEbnBusGCdQOyziCNdiSryev/Ix2UvskZaIHsEZ+LyIrVQzyGNPPNFOiJ5UlOgsHW+iJjbyDrXXLXkpwVIXUiqQNLqmg1SOxYSX7dimqxAdeI9FWpcVyacpfoHwXv7buO1JF2s7BxSD3pTUOxI/AfhLE8pc2fnt0AAAAASUVORK5CYII=") ;
+            background-size: contain;
+        }
+        #genre{
+            position: absolute;
+            display: flex;
+            white-space: nowrap;
+            width: 99%;
+            background-color:transparent;
+            height: 200px;
+            margin-top: 9%;
+            border-radius: 20px;
+            overflow: hidden;
+            border-color: rgb(188,181,181);
+            
+        }
+        .genre-slide{
+            animation: slide 14s linear infinite;
+            
+        }
+
+        .genres{
+            display: inline-block;
+            box-shadow: 0px 1px 2px 4px rgb(188,181,181);
+            border-radius: 7px;
+            margin-right: 200px;
+            margin-top: 20px;
+
+        }
+        @keyframes slide{
+            from{
+                transform: translateX(0);
+            }
+            to{
+                transform: translateX(-100%);
+            }
+        }
+        #genre:hover .genre-slide{
+            animation-play-state: paused;
+        }
+#nav{
+    display: flex;
+    
+}
+        #trendingsongs{
+            background-image: url("trending.jpeg");
+            height: 165px;
+            width: 165px;
+            background-size: cover;
+            color: black;
+            font-size: x-large;
+            margin-top: 30px;
+        
+
+            
+            
+            
+        }
+        
+        
+        #hits_90{
+
+            background-image: url("90.jpeg");
+            height: 165px;
+            width: 165px;
+            background-size: cover;
+            
+            
+        }
+        #bollywood{
+
+            background-image: url("best.jpeg");
+            height: 165px;
+            width: 165px;
+            background-size: cover;
+            
+        }
+        #tollywoodcentre{
+
+            background-image: url("tollywood.jpeg");
+            height: 165px;
+            width: 165px;
+            background-size: cover;
+            
+        }
+        #globalpearl{
+
+            background-image: url("pearls.jpeg");
+            height: 165px;
+            width: 165px;
+            background-size: cover;
+        }
+
+        .genres:hover{
+            scale: 1.2;
+            transition: scale 0.1s linear 0s;
+            cursor: pointer;
+        }
+        #playlistContainer{
+            position: absolute;
+            height: 400px;
+            width: 380px;
+            background-image: linear-gradient(rgb(90,5,90),rgb(27,27,107));
+            margin-top: 25%;
+            left: 82%;
+            translate: -33%;
+            border: 2px solid white;
+            border-radius: 5%;
+            
+        }
+        #phead{
+            position: absolute;
+            top: 3%;
+            left: 3%;
+            
+           height:40px;
+           width: 350px;
+            text-align: center;
+            font-size: 30px;
+            border: 2px solid black;
+            border-radius :30px; 
+            background-color: black;
+            color: white;
+        }
+        #playlist1{
+            position: absolute;
+            margin-top: 70px;
+            left: 3%;
+            color: white;
+           height:40%;
+           width: 350px;
+            text-align: center;
+            font-size: 30px;
+            border: 2px solid black;
+            border-radius :15px; 
+            background-color:black;
+
+        }
+        #playlist2{
+            position: absolute;
+            margin-top: 210px;
+            left: 3%;
+            color: white;
+           height:40%;
+           width: 350px;
+            text-align: center;
+            font-size: 30px;
+            border: 2px solid black;
+            border-radius :15px; 
+            background-color:black;
+
+
+        }
+       #play1,#play2{
+        color: white;
+        text-decoration: none;
+       }
+       #songs1,#songs2{
+        text-align: left;
+        font-size: medium;
+        color: white;
+       }
+       #historycontainer{
+        position: absolute;
+        left: 7%;
+        height: 400px;
+        width: 350px;
+        background-image: linear-gradient(rgb(90,5,90),rgb(27,27,107));
+        margin-top: 25%;
+        translate: -90px;
+        border: 2px solid white;
+        border-radius: 5%;
+       }
+       #historyheading{
+        
+        position: absolute;
+        top: 3%;
+        left: 3%;
+        
+       height:40px;
+       width: 320px;
+        text-align: center;
+        font-size: 30px;
+        border: 2px solid black;
+        border-radius :30px; 
+        background-color: black;
+        color: white;
+
+       }
+       #song1{
+        position: absolute;
+        margin-top: 70px;
+        left: 3%;
+        color: white;
+        height: 45px;
+        width: 320px;
+        text-align: center;
+        font-size: 30px;
+        
+        border: 2px solid black;
+        border-radius :15px; 
+        background-color: black;
+
+       }
+       #song2{
+        position: absolute;
+        margin-top: 135px;
+        left: 3%;
+        color: white;
+       height:45px;
+       width: 320px;
+        text-align: center;
+        font-size: 30px;
+        border: 2px solid black;
+        border-radius :15px; 
+        background-color: black;
+
+
+       }
+       #song3{
+        position: absolute;
+        margin-top: 200px;
+        left: 3%;
+        color: white;
+       height:45px;
+       width: 320px;
+        text-align: center;
+        font-size: 30px;
+        border: 2px solid black;
+        border-radius :15px; 
+        background-color: black;
+       }
+       #historysong1,#historysong2,#historysong3{
+        color: white;
+        text-decoration: none;
+        font-size: medium;
+    }
+    #navbottom{
+        position: absolute;
+        left: 1%;
+        margin-top:55%;
+        background-color: rgb(188,181,181);
+        height: 40px;
+        width: 97%;
+        text-align: center;
+        border-radius: 20px;
+        
+    }
+    #info{
+        position: absolute;
+        left: 5%;
+        width: 180px;
+        background-color: rgb(29, 67, 99);
+        height: 30px;
+        top: 20%;
+        border-radius: 40px;
+
+
+    }
+    #links{
+        left: 30%;
+        width: 180px;
+        background-color:rgb(29, 67, 99);
+        height: 30px;
+        top: 20%;
+         position: absolute;
+         border-radius: 40px;
+       
+
+
+    }
+    #aboutus{
+        left: 60%;
+        width:180px ;
+        background-color:rgb(29, 67, 99) ;
+        height: 30px;
+        top: 20%;
+        border-radius: 40px;
+         position: absolute;
+
+    }
+    #rateus{
+        left: 85%;
+        width:180px ;
+        background-color: rgb(29, 67, 99);
+        height: 30px;
+        top: 20%;
+         position: absolute;
+         border-radius: 40px;
+
+    }
+    .footlink{
+        text-align: center;
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+    }
+    #searchBar:hover{
+        padding: 1px;
+    }
+    #recommendation{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 400px;
+        width: 730px;
+        background-color: rgb(33, 33, 56);
+        left: 25%;
+        top: 53%;
+        border: 2px solid white;
+        border-radius: 20px;
+        color: white;
+        overflow-y:scroll;
+        text-decoration: none;
+        color: white;
+
+    }
+    #recommendation::-webkit-scrollbar{
+        display: none;
+    }
+    #rhead{
+        font-size: 30px;
+        position: absolute;
+        left: 50%;
+        translate: -50%;
+        top: 0%;
+
+    }
+    .songcovercontainer{
+        display: flex;
+        position: absolute;
+        height: 60px;
+        width: 90%;
+        background-color: rgb(188,181,181);
+        border: 5px solid black ;
+        border-radius: 10px;
+        margin-top: 10%;
+    }
+    #recommendation a{
+        color: black;
+    }
+    .cover{
+        height:60px;
+        width: 60px;
+        font-size: 1.5em;
+       
+    }
+    
+    #cover1{
+        background-image: url("saware.jpeg");  
+        background-size: cover;
+        
+    }
+    #cover2{
+        background-image: url("saiyyan.jpeg");
+        background-size: cover;
+    }
+    #cover3{
+        background-image: url("shukriya.jpeg");
+        background-size: cover;
+    }
+    #cover4{
+        background-image: url("ninnila.jpeg");
+        background-size: cover;
+    }
+    #cover5{
+        background-image: url("fear.jpeg");
+        background-size: cover;
+    }
+    #cover6{
+        background-image: url("https://www.cinejosh.com/gallereys/movies/normal/agnathavasi_gaali_vaaluga_song_poster_1212171236/agnathavasi_gaali_vaaluga_song_poster_1212171236_01.jpg");
+        background-size: cover;
+    }
+    .rsongs{
+        font-size: 18px;
+    }
+    #playlistContainer a{
+        text-decoration: none;
+    }
+    #upload{
+        position: absolute;
+        top: 30%;
+        left: 40%;
+        height: 25px;
+        width: 80px;
+        font-size: 20px;
+        color: white;
+        backdrop-filter: blur(10px);
+        border: 2px double blue ;
+        text-align: center;
+        background-color: blue;
+    }
+    #upload:hover{
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="main">
+            <div id="logo"></div>
+            <div id="logoname">ECHOMIX</div>
+            <a href="wdaupload.html" target="_blank"><div id="upload">Upload</div>
+            <input type="text" name="searchBar" id="searchBar" value="" placeholder="Search">
+            
+            <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <a href="profile.html"><div id="profileButton"><img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.1.1908571217.1697457883&semt=ais_hybrid" alt="" height="55px"></div></a>
+        </div>
+    </header>
+   <div id="genre">
+        <div class="genre-slide">
+        <a href="#" target="_blank"><div id="trendingsongs" class="genres"></a></div>
+        
+        <a href="#" target="_blank"><div id="hits_90" class="genres"></div></a>
+        <a href="#" target="_blank"><div id="bollywood" class="genres">
+        </div></a>
+        <a href="#" target="_blank"><div id="tollywoodcentre" class="genres"></div></a>
+        <a href="#" target="_blank"><div id="globalpearl" class="genres"></div></a>
+     </div>
+     <div class="genre-slide">
+        <a href="#" target="_blank"><div id="trendingsongs" class="genres"></div></a>
+        <a href="#" target="_blank"><div id="hits_90" class="genres"></div></a>
+        <a href="#" target="_blank"><div id="bollywood" class="genres">
+        </div></a>
+        <a href="#" target="_blank"><div id="tollywoodcentre" class="genres"></div></a>
+        <a href="#" target="_blank"><div id="globalpearl" class="genres"></div></a>
+     </div>
+
+     
+</div>
+
+
+<div id="playlistContainer">
+    <div id="phead">Your Playlists</div>
+    <div id="playlist1"><a href=" #" id="play1">Playlist 1</a>
+    <div id="songs1">
+        <ul>
+            <li><a href="song10.html">We-wish-you-a-merry-christmas</a> </li>
+            <li><a href="song11.html">Tum Jo Mile Ho</a> </li>
+            <li>Add more➕</li>
+            <li>Delete➖</li>
+        </ul>
+    </div>
+    </div>
+    <div id="playlist2">
+        <a href=" #" id="play2">Playlist 2</a>
+    <div id="songs2">
+        <ul>
+            <li><a href="song12.html">Raanjhan Do Patti</a> </li>
+            <li>Add more➕</li>
+            <li>Delete➖</li>
+        </ul>
+    </div>  
+    </div>
+    <div id="playlist3"></div>
+    </div>
+    <div id="historycontainer">
+    <div id="historyheading"> Your History</div>
+    <div id="song1"><a href="song1.html" id="historysong1">O Mahi O Mahi</a></div>
+    <div id="song2"><a href="song2.html" id="historysong2">Hauli Hauli</a></div>
+    <div id="song3"><a href="song3.html" id="historysong3">Mere Mehboob Mere Sanam</a></div>
+    </div>
+    <div id="recommendation">
+        <div id="rhead">Recommended Songs</div>
+        <a href="song7.html" target="_blank"><div class="songcovercontainer" id="rsong4"><div id="cover4" class="cover"></div><div  class="rsongs"><br>Ninnila ninnila</div></div></a>
+        <a href="song6.html" target="_blank"><div class="songcovercontainer" id="rsong3"><div id="cover3" class="cover"></div><div  class="rsongs"><br>Sukriya</div></div></a>
+        <a href="song8.html" target="_blank"><div class="songcovercontainer" id="rsong5"><div id="cover5" class="cover"></div><div  class="rsongs"><br>Fear Devara</div></div></a>
+        <a href="song4.html" target="_blank"><div class="songcovercontainer" id="rsong1"><div id="cover1" class="cover"></div><div  class="rsongs"><br>Saanware</div></div></a>
+        <a href="song5.html" target="_blank"><div class="songcovercontainer" id="rsong2"><div id="cover2" class="cover"></div><div  class="rsongs"><br>Saiyaan Dheere Dheere</div></div></a>
+        <a href="song9.html" target="_blank"><div class="songcovercontainer" id="rsong6"><div id="cover6" class="cover"></div><div  class="rsongs"><br>Gaali Vaaluga</div></div></a>
+    </div>
+    <div id="navbottom">
+        <div id="info" ><a href="feature.html" target="_blank" class="footlink">Info</a></div>
+        <div id="links" ><a href="https://www.instagram.com/iiitlucknow/profilecard/?igsh=ajFiMnFkZzZ0ZWwz" target="_blank" class="footlink" >Instagram  <i class="fa-brands fa-instagram"></i></a></div>
+        <div id="aboutus"><a href="aboutus.html" target="_blank" class="footlink">About Us</a></div>
+        <div id="rateus"><a href="#"class="footlink">Rate Us  <i class="fa-solid fa-star"></i></a></div>
+        
+        </div>
+        <script src="https://kit.fontawesome.com/364f7c9d58.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
