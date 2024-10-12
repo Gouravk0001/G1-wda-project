@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aboutus</title>
+    <link rel="icon" href="echomixlogo.jpg">
+    <link rel="icon" href="logo.jpeg" type="image/x-icon">
+    <style>
+        body{
+            background-image: linear-gradient(rgb(90, 5, 90),black,rgb(27, 27, 107));
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+        #header{
+            margin-top: 2%;
+            background-color: rgb(175, 13, 159);
+            height:80px;
+            width: 99%;
+            border-radius: 10px;
+        }
+        #echo{
+            position:absolute;
+            top: 5%;
+            left: 2%;
+            border-radius: 50%;
+            
+        }
+        #em{
+            position: absolute;
+            left: 7%;
+            top: 8%;
+            height: 40px;
+            width: 40px;
+            font-size: 40px;
+        }
+        #pro{
+            position: absolute;
+            margin-left: 94%;
+            margin-top: 1%;
+        }
+        #a{
+            font-size: larger;
+           margin-left: 550px;
+           text-decoration: none;
+           margin-top: 20px;
+        }
+        #nav{
+            display: flex;
+        }
+        #box1{
+            text-align: center;
+            color: beige;
+            font-family: cursive;
+            font-style: italic;
+        }
+        #slide{
+            background-color: transparent;
+            display: flex;
+            height: 250px;
+            padding: 10px;
+           
+        }
+        .echo1{
+            margin: 20px;
+            animation-name: scroll;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+            animation-delay: 0s;
+            animation-timing-function: linear;
+            
+        }
+        
+        @keyframes scroll{
+            0%{
+                transform: translateX(0%);
+            }
+            100%{
+                transform: translateX(-1202%);
+            }
+        }
+        #slide:hover .echo1{
+            animation-play-state: paused;
+        }
+        .img{
+            border-radius: 50%;
+            border: 4px solid white;
+        }
+        .hov{
+            display: none;
+            color: rgb(241, 240, 245);
+        }
+        .hov1:hover .hov{
+            display: block; 
+            
+        }
+        .hov1:hover .hov2{
+            background-image: linear-gradient(rgb(90, 5, 90),black,rgb(27, 27, 107));
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            border-radius: 15px;
+            border: 5px solid rgb(145, 145, 126);
+            box-shadow: 3px 4px 5px blue;
+        }
+        #em{
+            font-weight: bolder;
+            font-size: 20px;
+        }
+        .in{
+            border-radius: 15px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div id="header">
+        <nav id="nav">
+            <a href="wdaproject.html"><img src="aboutus\echomixlogo.jpg" height="70px" width="70px" id="echo"></a>
+            <div id="em">ECHOMIX</div>
+            <a href="profile.html"><img src="aboutus\finalprofilepic.avif" height="50px" width="50px" id="pro"></a>
+        </nav>
+    </div>
+    <div ID="box1">
+        <h1>ABOUT US</h1>
+        <p>ONE STOP DESTINATION FOR ALL YOUR MUSIC REQUIREMENT</p>
+        <p>MEET OUR TEAM "ELITES"</p>
+        <p>OF CREATORS, DESIGNERS AND PROBLEM SOLVERS</p>
+    </div>
+    <div id="slide">
+         <div class="echo1">
+            <img src="aboutus\abhinav.jpg" class="img" height="200px" width="200px" >
+            <div class="hov1">
+            <button >KNOW MORE</button>
+            <div class="hov2">
+            <p class="hov">ABHINAV NEEMA</p>
+            <p class="hov">LCB2024042</p>
+            <p class="hov">CSB</p>
+            <a href="https://www.linkedin.com/in/abhinav-neema-95a69931a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " class="hov" target="_blank"><img  class="in"src="logo.png" height="30px" width="50px"></a>
+        </div>
+        </div>
+         </div>
+         <div class="echo1">
+            <img src="aboutus\gourav.jpg" class="img" height="200px" width="200px" >
+            <div class="hov1">
+            <button >KNOW MORE</button>
+            <div class="hov2">
+            <p class="hov">GOURAV KUMAR</p>
+            <p class="hov">LCB2024046</p>
+            <p class="hov">CSB</p>
+            <a href="https://www.linkedin.com/in/gourav-kumar-65739a329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hov" target="_blank"><img src="logo.png" class="in" height="30px" width="50px"></a>
+        </div>
+            </div>
+         </div>
+         <div class="echo1">
+            <img src="aboutus\prasoon.jpg" class="img" height="200px" width="200px" >
+            <div class="hov1">
+            <button >KNOW MORE</button>
+            <div class="hov2">
+            <p class="hov">PRASOON PATEL</p>
+            <p class="hov">LCI2024051</p>
+            <p class="hov">CSAI</p>
+            <a href="https://www.linkedin.com/in/prasoon-patel-580907327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " class="hov" target="_blank"><img src="logo.png" class="in"height="30px" width="50px"></a>
+        </div>
+        </div>
+         </div>
+         <div class="echo1">
+            <img src="aboutus\vvpic.jpg" class="img" height="200px" width="200px">
+            <div class="hov1">
+            <button >KNOW MORE</button>
+            <div class="hov2">
+            <p class="hov">VENNELA VARSHINI</p>
+            <p class="hov">LCB2024021</p>
+            <p class="hov">CSB</p>
+            <a href="https://www.linkedin.com/in/vennela-varshini-anasoori-457765320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hov" target="_blank"><img src="logo.png" class="in"height="30px" width="50px"></a>
+        </div>
+        </div>
+         </div>
+         <div class="echo1">
+            <img src="aboutus\parth.jpg" class="img" height="200px" width="200px">
+            <div class="hov1">
+            <button >KNOW MORE</button>
+            <div class="hov2">
+            <p class="hov">PARTH KHUNT</p>
+            <p class="hov">LCB2024023</p>
+            <p class="hov">CSB</p>
+            <a href="https://www.linkedin.com/in/parth-khunt-0069b6325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " class="hov" target="_blank"><img src="logo.png" class="in"height="30px" width="50px"></a>
+        </div>
+        </div>
+         </div>
+         <div class="echo1">
+            <img src="aboutus\sindhu.jpg" class="img" height="200px" width="200px">
+            <div class="hov1">
+            <button >KNOW MORE</button>
+            <div class="hov2">
+            <p class="hov">SINDHUJA PAGADALA</p>
+            <p class="hov">LCI2024013</p>
+            <p class="hov">CSAI</p>
+            <a href="https://www.linkedin.com/in/sindhuja-pagadala-a5a290325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hov" target="_blank"><img src="logo.png" class="in" height="30px" width="50px"></a>
+        </div>
+        </div>
+         </div>
+         <div class="echo1">
+            <img src="aboutus\pranav.jpg" class="img" height="200px" width="200px">
+            <div class="hov1">
+            <button >KNOW MORE</button>
+            <div class="hov2">
+            <p class="hov">PRANAV PANMAND</p>
+            <p class="hov">ROLL NO.</p>
+            <p class="hov">BRANCH</p>
+            <a href="" class="hov"><img src="logo.png" class="in"height="30px" width="50px"></a>
+        </div>
+        </div>
+         </div>
+         <div class="echo1">
+            <img src="aboutus\hansika.jpeg" class="img" height="200px" width="200px">
+            <div class="hov1">
+            <button >KNOW MORE</button>
+            <div class="hov2">
+            <p class="hov">HANSIKA REDDY</p>
+            <p class="hov">LCI2024019</p>
+            <p class="hov">CSAI</p>
+            <a href="https://www.linkedin.com/in/hansika-reddy-a32361325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hov" target="_blank"><img src="logo.png" height="30px" class="in" width="50px"></a>
+        </div>
+        </div>
+         </div>
+         <div class="echo1">
+            <img src="aboutus\akash.jpg" class="img" height="200px" width="200px">
+            <div class="hov1">
+            <button >KNOW MORE</button>
+            <div class="hov2">
+            <p class="hov">AKASH THAKUR</p>
+            <p class="hov">LCB2024037</p>
+            <p class="hov">CSB</p>
+            <a href="https://www.linkedin.com/in/akash-thakur-96948532b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hov" target="_blank"><img src="logo.png" height="30px" class="in" width="50px"></a>
+        </div>
+        </div>
+         </div>
+         <div class="echo1">
+            <img src="aboutus\hasini.jpg" class="img"  height="200px" width="200px">
+            <div class="hov1">
+            <button >KNOW MORE</button>
+            <div class="hov2">
+            <p class="hov">HASINI</p>
+            <p class="hov">LCI2024018</p>
+            <p class="hov">CSAI</p>
+            <a href="https://www.linkedin.com/in/hasini-raja-a571a4325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hov" target="_blank"><img src="logo.png" class="in" height="30px" width="50px"></a>
+        </div>
+        </div>
+         </div>
+         <div id="slide">
+            <div class="echo1">
+               <img src="aboutus\abhinav.jpg" class="img" height="200px" width="200px" >
+               <div class="hov1">
+               <button >KNOW MORE</button>
+               <div class="hov2">
+               <p class="hov">ABHINAV NEEMA</p>
+               <p class="hov">LCB2024042</p>
+               <p class="hov">CSB</p>
+               <a href="https://www.linkedin.com/in/abhinav-neema-95a69931a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " class="hov" target="_blank"><img  class="in"src="logo.png" height="30px" width="50px"></a>
+           </div>
+           </div>
+            </div>
+            <div class="echo1">
+               <img src="aboutus\gourav.jpg" class="img" height="200px" width="200px" >
+               <div class="hov1">
+               <button >KNOW MORE</button>
+               <div class="hov2">
+               <p class="hov">GOURAV KUMAR</p>
+               <p class="hov">LCB2024046</p>
+               <p class="hov">CSB</p>
+               <a href="https://www.linkedin.com/in/gourav-kumar-65739a329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hov" target="_blank"><img src="logo.png" class="in" height="30px" width="50px"></a>
+           </div>
+               </div>
+            </div>
+            <div class="echo1">
+               <img src="aboutus\prasoon.jpg" class="img" height="200px" width="200px" >
+               <div class="hov1">
+               <button >KNOW MORE</button>
+               <div class="hov2">
+               <p class="hov">PRASOON PATEL</p>
+               <p class="hov">LCI2024051</p>
+               <p class="hov">CSAI</p>
+               <a href="https://www.linkedin.com/in/prasoon-patel-580907327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " class="hov" target="_blank"><img src="logo.png" class="in"height="30px" width="50px"></a>
+           </div>
+           </div>
+            </div>
+            <div class="echo1">
+               <img src="aboutus\vvpic.jpg" class="img" height="200px" width="200px">
+               <div class="hov1">
+               <button >KNOW MORE</button>
+               <div class="hov2">
+               <p class="hov">VENNELA VARSHINI</p>
+               <p class="hov">LCB2024021</p>
+               <p class="hov">CSB</p>
+               <a href="https://www.linkedin.com/in/vennela-varshini-anasoori-457765320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hov" target="_blank"><img src="logo.png" class="in"height="30px" width="50px"></a>
+           </div>
+           </div>
+            </div>
+            <div class="echo1">
+               <img src="aboutus\parth.jpg" class="img" height="200px" width="200px">
+               <div class="hov1">
+               <button >KNOW MORE</button>
+               <div class="hov2">
+               <p class="hov">PARTH KHUNT</p>
+               <p class="hov">LCB2024023</p>
+               <p class="hov">CSB</p>
+               <a href="https://www.linkedin.com/in/parth-khunt-0069b6325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " class="hov" target="_blank"><img src="logo.png" class="in"height="30px" width="50px"></a>
+           </div>
+           </div>
+            </div>
+            <div class="echo1">
+               <img src="aboutus\sindhu.jpg" class="img" height="200px" width="200px">
+               <div class="hov1">
+               <button >KNOW MORE</button>
+               <div class="hov2">
+               <p class="hov">SINDHUJA PAGADALA</p>
+               <p class="hov">LCI2024013</p>
+               <p class="hov">CSAI</p>
+               <a href="https://www.linkedin.com/in/sindhuja-pagadala-a5a290325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hov" target="_blank"><img src="logo.png" class="in" height="30px" width="50px"></a>
+           </div>
+           </div>
+            </div>
+            <div class="echo1">
+               <img src="aboutus\pranav.jpg" class="img" height="200px" width="200px">
+               <div class="hov1">
+               <button >KNOW MORE</button>
+               <div class="hov2">
+               <p class="hov">PRANAV PANMAND</p>
+               <p class="hov">LCI2024025</p>
+               <p class="hov">CSAI</p>
+               <a href="" class="hov"><img src="logo.png" class="in"height="30px" width="50px"></a>
+           </div>
+           </div>
+            </div>
+            <div class="echo1">
+               <img src="aboutus\hansika.jpg" class="img" height="200px" width="200px">
+               <div class="hov1">
+               <button >KNOW MORE</button>
+               <div class="hov2">
+               <p class="hov">HANSIKA REDDY</p>
+               <p class="hov">LCI2024019</p>
+               <p class="hov">CSAI</p>
+               <a href="https://www.linkedin.com/in/hansika-reddy-a32361325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hov" target="_blank"><img src="logo.png" height="30px" class="in" width="50px"></a>
+           </div>
+           </div>
+            </div>
+            <div class="echo1">
+               <img src="aboutus\akash.jpg" class="img" height="200px" width="200px">
+               <div class="hov1">
+               <button >KNOW MORE</button>
+               <div class="hov2">
+               <p class="hov">AKASH THAKUR</p>
+               <p class="hov">LCB2024037</p>
+               <p class="hov">CSB</p>
+               <a href="https://www.linkedin.com/in/akash-thakur-96948532b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hov" target="_blank"><img src="logo.png" height="30px" class="in" width="50px"></a>
+           </div>
+           </div>
+            </div>
+            <div class="echo1">
+               <img src="aboutus\hasini.jpg" class="img"  height="200px" width="200px">
+               <div class="hov1">
+               <button >KNOW MORE</button>
+               <div class="hov2">
+               <p class="hov">HASINI</p>
+               <p class="hov">LCI2024018</p>
+               <p class="hov">CSAI</p>
+               <a href="https://www.linkedin.com/in/hasini-raja-a571a4325?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="hov" target="_blank"><img src="logo.png" class="in" height="30px" width="50px"></a>
+           </div>
+           </div>
+            </div>
+    </div>
+</body>
+</html>

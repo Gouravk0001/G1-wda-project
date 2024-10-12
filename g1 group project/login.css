@@ -1,0 +1,33 @@
+#aa{
+    /* background-image: url("peakpx.jpg");
+     background-size: cover;*/
+     background-color: transparent;
+     border: 2px solid rgba(255, 255, 255, .2);
+     border-radius: 15px;
+ }
+ 
+ #bb {
+     text-shadow: 10px, 10px, white;
+ }
+ #cc {
+     color: white;
+ }
+ #dd {
+ 
+     color: white;
+ }  
+ #ee {
+ 
+     color: white;
+ }
+ #input, #confirm_password, #password {
+     height: 30px;
+     background: transparent;
+     border: none;
+     outline: none;
+     border: 2px solid rgba(255, 255, 255, .2);
+     border-radius: 40px;
+ }
+ #a{
+     color: aqua;
+ }
