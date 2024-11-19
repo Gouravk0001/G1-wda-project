@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload song</title>
     <link rel="icon" href="logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
      body{
         height: vh;
@@ -13,42 +16,13 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
      }
-     #head{
-       
-        display: flex;
-        
-        height: 60px;
-        
-        background-color: rgb(188, 181, 181);
-        background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3cd770b2-3e49-4672-99fb-8483b9dd9bf0/dg2jzjx-09688ae9-5e0c-4ee5-9d25-7883937eae3f.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNjZDc3MGIyLTNlNDktNDY3Mi05OWZiLTg0ODNiOWRkOWJmMFwvZGcyanpqeC0wOTY4OGFlOS01ZTBjLTRlZTUtOWQyNS03ODgzOTM3ZWFlM2YucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.iwFvYJ7UOMKb8rYfAhGxBG3-yCOrw4qixMtg7SLAlXI);
-            background-size: cover;
-        border-radius: 15px;
-     }
-     #echo{
-       margin-top: 5px;
-       margin-left: 15px;
-        
-        
-        border-radius: 50%;
-        
-       
-     }
-     #name{
-        margin-left: 15px;
-        margin-top: 10px;
-        font-size: 40px;
-        font-style: italic;
-        font-weight: bold;
-        color: black;
-     }
+     
+ 
+   
      #link{
         text-decoration: none;
      }
-     #profile{
-        margin-top: 5px;
-        margin-left: 1190px;
-        
-     }
+   
      #name:hover{
         color: rgb(61, 62, 62);
      }
@@ -113,25 +87,24 @@
     </style>
  </head>
  <body>
-    <header>
-        <div id="head">
-            <nav id="nav">
-                <img src="logo.jpeg" height="50px" width="50px" id="echo">
-               <a href="wdaproject.html" id="link" style="text-decoration: none;" ><h4 id="name">ECHOMIX</h4></a>
-               
+   <header> 
+      <nav class="navbar navbar-expand-lg navbar-light bg-light m-2 mt-4" style=" background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3cd770b2-3e49-4672-99fb-8483b9dd9bf0/dg2jzjx-09688ae9-5e0c-4ee5-9d25-7883937eae3f.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNjZDc3MGIyLTNlNDktNDY3Mi05OWZiLTg0ODNiOWRkOWJmMFwvZGcyanpqeC0wOTY4OGFlOS01ZTBjLTRlZTUtOWQyNS03ODgzOTM3ZWFlM2YucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.iwFvYJ7UOMKb8rYfAhGxBG3-yCOrw4qixMtg7SLAlXI);
+      background-size: cover;border-radius:10px;height:75px;">
+<a class="navbar-brand" href="#">
+  <img src="logo.jpeg" alt="Logo" width="55" height="55" class="d-inline-block align-top" style="border-radius: 50%;">
+  <span class="d-inline-block align-center" style="font-size: 40px;font-style: italic;font-weight: bold; backdrop-filter: blur(2px);">ECHOMIX</span>
+</a>
 
-                <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.1.1908571217.1697457883&semt=ais_hybrid" height="45px" width="45px" id="profile">
-            
-             
-            </nav>
-            </div>
-            <div id="details">
-            
-                    <h1>DETAILS OF YOUR SONG</h1>
-                 
-            </div>
-    </header>
-
+<div class="navbar ml-auto" id="navbarNav">
+  <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+          <a class="nav-link" href="profile.html"><img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.1.1908571217.1697457883&semt=ais_hybrid" alt="" height="55px"></a>
+      </li>
+  </ul>
+</div>
+</nav>
+</header>
+<br><br><br>
     <div id="box">
         <form class="form">
             <label for="title"><b>Title:</b></label>
