@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Ratings</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    body{
+        background-image: linear-gradient(rgb(90, 5, 90),black,rgb(27, 27, 107));
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+    }
+    .rating-emoji {
+            font-size: 2rem;
+        }
+
+        .emoji-option {
+            cursor: pointer;
+            margin: 0 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .emoji-option:hover {
+            transform: scale(1.2);
+        }
+        #main{
+            position: absolute;
+            display: flex;
+            margin-top: 20px;
+            height: 75px;
+            width: 99%;
+            background-color: rgb(188,181,181);
+            border-radius: 10px;
+            background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3cd770b2-3e49-4672-99fb-8483b9dd9bf0/dg2jzjx-09688ae9-5e0c-4ee5-9d25-7883937eae3f.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNjZDc3MGIyLTNlNDktNDY3Mi05OWZiLTg0ODNiOWRkOWJmMFwvZGcyanpqeC0wOTY4OGFlOS01ZTBjLTRlZTUtOWQyNS03ODgzOTM3ZWFlM2YucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.iwFvYJ7UOMKb8rYfAhGxBG3-yCOrw4qixMtg7SLAlXI);
+            background-size: cover;
+        }
+        
+        #logo{
+            position: absolute;
+            height:65px;
+            width: 65px;
+            border-radius: 50%;
+            background-color: white;
+            margin-top: 5px;
+            left: 2%;
+            background-image: url("logo.jpeg");
+            background-size: cover;
+        }
+        #logoname{
+            position: absolute;
+            left: 8%;
+            margin-top:3px ;
+            font-size: 45px;
+            font-style: italic;
+            font-weight: bold;
+            margin-top: 17px;
+            color: rgb(0, 0, 0);
+            backdrop-filter: blur(2px);
+            
+        }
+        #profileButton{
+            position:absolute;
+            left: 95%;
+            background-color: white;
+            height: 50px;
+            width: 55px;
+            margin-top: 9px;
+            border-radius: 50%;
+            background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAACUCAMAAAANv/M2AAAAM1BMVEXk5ueutLenrrHg4uTn6eqqsLSxt7rKztDq7O3Hy83X2tvQ09XT1tjBxsi5vsHd4OGjqa6G6AVlAAAEW0lEQVR4nO2c6XKzOgyGbSMveOX+r/Yz5CRNcih4w3JneP6k05lM32qEZGuBkJubm5ubm5ubm5ubm5u/BKxgi0hlVToFbeUcMXpaf4Wt6QSAYGdHGWN8JX4IL+00ss0VMU5QTj/h1Ds7qrlBSUF3if+GMGpA2UAM+7bxO4yb4awN1h9J3mR7PZRqIPOJ4s1LhMQW+gZMPkHzih/G1qDPPOPH2GzCVvsflqVqXmXbIYxtku38YADVYDM1U4oeREDn+MaDZcJVDVO2nSMCWXVqrPvEYUqGucTQMYQgZhmwRZIjLOA5yC+nugS8QpIMssw5NlMbJFOr/Gj3g0DS7Co0UzqjmDpUaaY+IGguDXdP4k0GgbK88iPa95dcHqOfMAT/qPSOaGqER7E8sbzonmBCTZB+sPTWXJMNn3DZ2T9UZezY6H0AqUrhT0RnS0MT0Z2DXnqp44i+V1wwLTTTvudTlVK7O6dv+Kg8lj7pmxObRLx4K79F36Jv0TWi/2T0qL4CbPSN05BbSd+nc8WmwR2Adi+vw9JAs+jcNfqT5+k/eXPJ7mntwG1nzSTUi+5+GyfktIF/iuhfWK+vMPWuIKwNxFpD896SV2qrphh9OZCVlsbpkdeVID3KEIWqK+chtbegRjRSdyueT8sPIAxvfqI4wXC0ji2BUPwsYkkmFWEPpR33osxBUOc9CuvUWJHjxVQgGnvwihCd+zD2rv/vknncE+gTbhsh52bOEQeBPkn3kN4X8N8B4hIjH3Ks+8L+bxVgxzNE9+v3MRD8WcRmCAMeZyh9mB2FD2hnpANAGS92dXMunB511wWINp5/uwnjXobhNi/eiNKCdXRh2/oIY8sinJnG34SK3q1UlG6MsSH+PL7elW0/DtQKjL8rB6tZ1w05Y+S2JCelNNbqMMGQBl8NG53Zi8gzZPxEOyG8k3ogV9n2D7V0bGH8KE5zvjAx2+nxDVzJ5LF/eKj3TXkMf85ozP1EgCB39g/PhHPhZ0tQ0iMoIkVFNc+F3h4e/5z2h+uH5zA6Tx2TTnRkeXqmS4BTpzttvABot38uKpHtu+yDqqnNAMILb69+JoG08ItPGNdXWhvCnBiQ8+DOXhW5Qcn63uFvuGuMDbXtrGPEBa4NIJs78yfMty7jwNT+AfyGU91W8/FNu5nquaFm1WaGN4F2e+XgLneNJ632ymHqp3mlSSV46uHO77TomV8anffgujZiwyV5+5il1kN6+8aDOg9pfAxNRVSkmdo9yQrV5Zorpgwq4aW9GWgzBFsGKx2t7h7sPigKIdBm/6YUXjLjVD93V6u65MiHE6HfVWf30Ave6tKc7FlUha85ezircuauEbnBusGCdQOyziCNdiSryev/Ix2UvskZaIHsEZ+LyIrVQzyGNPPNFOiJ5UlOgsHW+iJjbyDrXXLXkpwVIXUiqQNLqmg1SOxYSX7dimqxAdeI9FWpcVyacpfoHwXv7buO1JF2s7BxSD3pTUOxI/AfhLE8pc2fnt0AAAAASUVORK5CYII=") ;
+            background-size: contain;
+        }
+  </style>
+</head>
+<body>
+    <header> 
+        <nav class="navbar navbar-expand-lg navbar-light bg-light m-2 mt-4" style=" background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3cd770b2-3e49-4672-99fb-8483b9dd9bf0/dg2jzjx-09688ae9-5e0c-4ee5-9d25-7883937eae3f.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNjZDc3MGIyLTNlNDktNDY3Mi05OWZiLTg0ODNiOWRkOWJmMFwvZGcyanpqeC0wOTY4OGFlOS01ZTBjLTRlZTUtOWQyNS03ODgzOTM3ZWFlM2YucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.iwFvYJ7UOMKb8rYfAhGxBG3-yCOrw4qixMtg7SLAlXI);
+        background-size: cover;border-radius:10px;height:75px;">
+<a class="navbar-brand" href="#">
+    <img src="logo.jpeg" alt="Logo" width="55" height="55" class="d-inline-block align-top" style="border-radius: 50%;">
+    <span class="d-inline-block align-center" style="font-size: 40px;font-style: italic;font-weight: bold; backdrop-filter: blur(2px);">ECHOMIX</span>
+</a>
+
+<div class="navbar ml-auto" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="profile.html"><img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.1.1908571217.1697457883&semt=ais_hybrid" alt="" height="55px"></a>
+        </li>
+    </ul>
+</div>
+</nav>
+</header>
+<br/>
+    <div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-4" style="width: 22rem; border-radius: 20px;">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h3>---🎶Your Rating🎶---</h3>   
+        </div>
+    <div class="d-flex justify-content-center my-3">
+        <span class="emoji-option"><span class="rating-emoji">😊</span></span>
+        <span class="emoji-option"><span class="rating-emoji">😐</span></span>
+        <span class="emoji-option"><span class="rating-emoji">☹</span></span>
+    </div>
+    
+    <div class="text-center">
+      <div class="mb-2">
+        <i class="bi bi-star-fill text-warning"></i>
+        <i class="bi bi-star-fill text-warning"></i>
+        <i class="bi bi-star-fill text-warning"></i>
+        <i class="bi bi-star-fill text-warning"></i>
+        <i class="bi bi-star text-muted"></i>
+      </div>
+      <p class="text-muted mb-3">Average rating is 4.0 till now</p>
+    </div>
+
+    <div class="d-flex justify-content-around mb-4">
+      <div class="text-center">
+        <h5 class="mb-0">98%</h5>
+        <small class="text-muted">satisfaction</small>
+      </div>
+      <div class="text-center">
+        <h5 class="mb-0">2%</h5>
+        <small class="text-muted">dissatisfactions</small>
+      </div>
+    </div>
+    <h6 class="mb-3">Customer reviews</h6>
+    
+    <div class="d-flex mb-3">
+      <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.1.1908571217.1697457883&semt=ais_hybrid" alt="" height="55px" class="rounded-circle me-3" alt="User Image">
+      <div>
+        <div class="d-flex justify-content-between">
+          <strong>Abhinav Neema</strong>
+          <small class="text-muted">1d</small>
+        </div>
+        <div class="text-warning">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star"></i>
+        </div>
+        <p class="text-muted mb-0">It's well-made. The interface is excellent and provides One of the Best Experiences to the Users</p>
+      </div>
+    </div>
+    
+    <div class="d-flex mb-3">
+      <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.1.1908571217.1697457883&semt=ais_hybrid" alt="" height="55px" class="rounded-circle me-3" alt="User Image">
+      <div>
+        <div class="d-flex justify-content-between">
+          <strong>Gourav</strong>
+          <small class="text-muted">1d</small>
+        </div>
+        <div class="text-warning">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+        </div>
+        <p class="text-muted mb-0">It may need improvements, but nevertheless a good website coz it has many Unique features.</p>
+      </div>
+    </div>
+    
+    <div class="d-flex">
+      <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.1.1908571217.1697457883&semt=ais_hybrid" alt="" height="55px" class="rounded-circle me-3" alt="User Image">
+      <div>
+        <div class="d-flex justify-content-between">
+          <strong>Vennela Varshini</strong>
+          <small class="text-muted">1d</small>
+        </div>
+        <div class="text-warning">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+        </div>
+        <p class="text-muted mb-0">Amazing experience!..Sounds pretty good and Worth a Try..</p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+</body>
+</html>
