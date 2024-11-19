@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Player</title>
+    
+    <style>
+        body{
+            height: vh; 
+            width: vh;
+            
+            background: linear-gradient(rgb(90,5,90), black, rgb(27,27,107)) ;
+        }
+        #main{
+            top: 1%;
+            position: absolute;
+            display: flex;
+            
+            height: 75px;
+            width: 99%;
+            background-color: rgb(188,181 ,181 );
+            border-radius: 10px;
+
+        }
+        #searchBar{
+            position: absolute;
+            left: 79%;
+            translate: -100%;
+            margin-top:24\px;
+            height: 20px;
+            width: 300px;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        #searchButton{
+            position: absolute;
+            left: 78%;
+            margin-top: 26px;
+            height: 22px;
+            border-radius: 5px;
+            border-color: white;
+            width: 24px;
+            translate: -9px;
+            background-color: white;
+            font-size:small;
+            cursor: pointer;
+            background-image: url("data:image/png;base64,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");
+            background-size:cover;
+        }
+        #logo{
+            position: absolute;
+            height:75px;
+            width: 75px;
+            border-radius: 50%;
+            background-color: white;
+            
+            left: 2%;
+            background-image: url("echomix.jpeg");
+            background-size: cover;
+        }
+        #logoname{
+            position: absolute;
+            left: 8%;
+            margin-top:3px ;
+            font-size: 60px;
+            
+            
+        }
+        #profileButton{
+            position:absolute;
+            left: 95%;
+            background-color: white;
+            height: 50px;
+            width: 55px;
+            margin-top: 9px;
+            border-radius: 50%;
+            background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAACUCAMAAAANv/M2AAAAM1BMVEXk5ueutLenrrHg4uTn6eqqsLSxt7rKztDq7O3Hy83X2tvQ09XT1tjBxsi5vsHd4OGjqa6G6AVlAAAEW0lEQVR4nO2c6XKzOgyGbSMveOX+r/Yz5CRNcih4w3JneP6k05lM32qEZGuBkJubm5ubm5ubm5ubm5u/BKxgi0hlVToFbeUcMXpaf4Wt6QSAYGdHGWN8JX4IL+00ss0VMU5QTj/h1Ds7qrlBSUF3if+GMGpA2UAM+7bxO4yb4awN1h9J3mR7PZRqIPOJ4s1LhMQW+gZMPkHzih/G1qDPPOPH2GzCVvsflqVqXmXbIYxtku38YADVYDM1U4oeREDn+MaDZcJVDVO2nSMCWXVqrPvEYUqGucTQMYQgZhmwRZIjLOA5yC+nugS8QpIMssw5NlMbJFOr/Gj3g0DS7Co0UzqjmDpUaaY+IGguDXdP4k0GgbK88iPa95dcHqOfMAT/qPSOaGqER7E8sbzonmBCTZB+sPTWXJMNn3DZ2T9UZezY6H0AqUrhT0RnS0MT0Z2DXnqp44i+V1wwLTTTvudTlVK7O6dv+Kg8lj7pmxObRLx4K79F36Jv0TWi/2T0qL4CbPSN05BbSd+nc8WmwR2Adi+vw9JAs+jcNfqT5+k/eXPJ7mntwG1nzSTUi+5+GyfktIF/iuhfWK+vMPWuIKwNxFpD896SV2qrphh9OZCVlsbpkdeVID3KEIWqK+chtbegRjRSdyueT8sPIAxvfqI4wXC0ji2BUPwsYkkmFWEPpR33osxBUOc9CuvUWJHjxVQgGnvwihCd+zD2rv/vknncE+gTbhsh52bOEQeBPkn3kN4X8N8B4hIjH3Ks+8L+bxVgxzNE9+v3MRD8WcRmCAMeZyh9mB2FD2hnpANAGS92dXMunB511wWINp5/uwnjXobhNi/eiNKCdXRh2/oIY8sinJnG34SK3q1UlG6MsSH+PL7elW0/DtQKjL8rB6tZ1w05Y+S2JCelNNbqMMGQBl8NG53Zi8gzZPxEOyG8k3ogV9n2D7V0bGH8KE5zvjAx2+nxDVzJ5LF/eKj3TXkMf85ozP1EgCB39g/PhHPhZ0tQ0iMoIkVFNc+F3h4e/5z2h+uH5zA6Tx2TTnRkeXqmS4BTpzttvABot38uKpHtu+yDqqnNAMILb69+JoG08ItPGNdXWhvCnBiQ8+DOXhW5Qcn63uFvuGuMDbXtrGPEBa4NIJs78yfMty7jwNT+AfyGU91W8/FNu5nquaFm1WaGN4F2e+XgLneNJ632ymHqp3mlSSV46uHO77TomV8anffgujZiwyV5+5il1kN6+8aDOg9pfAxNRVSkmdo9yQrV5Zorpgwq4aW9GWgzBFsGKx2t7h7sPigKIdBm/6YUXjLjVD93V6u65MiHE6HfVWf30Ave6tKc7FlUha85ezircuauEbnBusGCdQOyziCNdiSryev/Ix2UvskZaIHsEZ+LyIrVQzyGNPPNFOiJ5UlOgsHW+iJjbyDrXXLXkpwVIXUiqQNLqmg1SOxYSX7dimqxAdeI9FWpcVyacpfoHwXv7buO1JF2s7BxSD3pTUOxI/AfhLE8pc2fnt0AAAAASUVORK5CYII=") ;
+            background-size: contain;
+        }
+        #song{
+            width: 400px;
+            height:auto;
+            text-align: center;
+            margin: auto;
+            margin-top: 100px;
+            color: antiquewhite;
+
+        }
+        #songimg{
+            width: 400px;
+            height: 400px;
+            border-radius: 30px;
+
+        }
+        #audio{
+            width: 500px;
+            
+        
+        }
+        #play{
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            width: 1000px;
+            margin-left: 375px;
+            justify-content: space-around;
+            margin: auto;
+            
+        }
+        #play a{
+            width: 30px;
+            
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+        <div id="main">
+            <div id="logo"></div>
+            <div id="logoname">ECHOMIX</div>
+            <input type="text" name="searchBar" id="searchBar" value="" placeholder="Search">
+            <button id="searchButton"></button>
+            <div id="profileButton"></div>
+        </div><br><br>
+    </header>
+
+    <main>  
+        <div id="song">
+            <img src="songphoto/meremehbob.jpeg" alt="song" id="songimg">
+            <h3 >Mere Mehboob Mere Sanam</h3>
+        </div>
+        
+        <span id="play">
+            <a href="song2.html"><i class="fa-solid fa-backward"></i></a>
+            <audio controls id="audio">
+            <source src="songlist/128-Mere Mehboob Mere Sanam - Bad Newz 128 Kbps.mp3" type="audio/mp3">
+            </audio>
+            <a href="song4.html"><i class="fa-solid fa-forward"></i></a>
+
+        </span>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+    </main> 
+       
+    <script src="https://kit.fontawesome.com/364f7c9d58.js" crossorigin="anonymous"></script>   
+</body>
+
+</html>
