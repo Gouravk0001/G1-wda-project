@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Ratings</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background-image: linear-gradient(rgb(90, 5, 90), black, rgb(27, 27, 107));
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    #main {
+      position: absolute;
+      display: flex;
+      margin-top: 10px;
+      height: 75px;
+      width: 99%;
+      background-color: rgb(188, 181, 181);
+      border-radius: 10px;
+      background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3cd770b2-3e49-4672-99fb-8483b9dd9bf0/dg2jzjx-09688ae9-5e0c-4ee5-9d25-7883937eae3f.png");
+      background-size: cover;
+    }
+
+    #logo {
+      position: absolute;
+      height: 65px;
+      width: 65px;
+      border-radius: 50%;
+      background-color: white;
+      margin-top: 5px;
+      left: 2%;
+      background-image: url("logo.jpeg");
+      background-size: cover;
+    }
+
+    #logoname {
+      position: absolute;
+      left: 8%;
+      margin-top: 5px;
+      font-size: 45px;
+      font-style: italic;
+      font-weight: bold;
+      color: rgb(0, 0, 0);
+    }
+
+    #profileButton {
+      position: absolute;
+      left: 95%;
+      background-color: white;
+      height: 50px;
+      width: 55px;
+      margin-top: 9px;
+      border-radius: 50%;
+      background-image: url("https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg");
+      background-size: contain;
+    }
+
+    .card {
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: fadeInSlide 1s forwards;
+    }
+
+    @keyframes fadeInSlide {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .emoji-option {
+  cursor: pointer;
+  margin: 0 15px;
+  font-size: 40px; 
+  transition: transform 0.3s ease;
+}
+
+.emoji-option:hover {
+  transform: scale(1.3); 
+}
+
+
+    
+
+    #feedback-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 20px;
+      opacity: 0;
+      transform: translateX(100px);
+      animation: slideIn 1s 1s forwards;
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    #feedback-section img {
+      max-width: 100px;
+      max-height: 100px;
+      margin-right: 20px;
+      border-radius: 50%;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    #feedback-section img:hover {
+      transform: scale(1.1);
+    }
+
+    #feedback-input {
+      flex: 1;
+      margin-left: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      resize: none;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    textarea:focus {
+      outline: none;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="main">
+      <div id="logo"></div>
+      <div id="logoname">ECHOMIX</div>
+      <a href="profile.html"><div id="profileButton"></div></a>
+    </div>
+  </header>
+  <br/><br/><br/><div id="reviews2">
+  <div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-4" style="width: 22rem; border-radius: 20px;">
+      <h3 class="text-center">---🎶Your Rating🎶---</h3>
+      <div class="d-flex justify-content-center my-3">
+        <span class="emoji-option" onclick="selectEmoji('😊')"><span class="rating-emoji" id="one">😊</span></span>
+        <span class="emoji-option" onclick="selectEmoji('😐')"><span class="rating-emoji" id="two">😑</span></span>
+        <span class="emoji-option" onclick="selectEmoji('☹')"><span class="rating-emoji" id="three">☹</span></span>
+      </div>
+      <div class="text-center">
+        <div class="mb-2">
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star text-muted"></i>
+        </div>
+        <p class="text-muted mb-3">Average rating is 4.0 till now</p>
+      </div>
+  
+      <div class="d-flex justify-content-around mb-4">
+        <div class="text-center">
+          <h5 class="mb-0">98%</h5>
+          <small class="text-muted">satisfaction</small>
+        </div>
+        <div class="text-center">
+          <h5 class="mb-0">2%</h5>
+          <small class="text-muted">dissatisfactions</small>
+        </div>
+      </div>
+      <h6 class="mb-3">Customer reviews</h6>
+      
+      <div class="d-flex mb-3">
+        <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.1.1908571217.1697457883&semt=ais_hybrid" alt="" height="55px" class="rounded-circle me-3" alt="User Image">
+        <div>
+          <div class="d-flex justify-content-between">
+            <strong>Abhinav Neema</strong>
+            <small class="text-muted">1d</small>
+          </div>
+          <div class="text-warning">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star"></i>
+          </div>
+          <p class="text-muted mb-0">It's well-made. The interface is excellent and provides One of the Best Experiences to the Users</p>
+        </div>
+      </div>
+      
+      <div class="d-flex mb-3">
+        <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.1.1908571217.1697457883&semt=ais_hybrid" alt="" height="55px" class="rounded-circle me-3" alt="User Image">
+        <div>
+          <div class="d-flex justify-content-between">
+            <strong>Gourav</strong>
+            <small class="text-muted">1d</small>
+          </div>
+          <div class="text-warning">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+          </div>
+          <p class="text-muted mb-0">It may need improvements, but nevertheless a good website coz it has many Unique features.</p>
+        </div>
+      </div>
+      
+      <div class="d-flex">
+        <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.1.1908571217.1697457883&semt=ais_hybrid" alt="" height="55px" class="rounded-circle me-3" alt="User Image">
+        <div>
+          <div class="d-flex justify-content-between">
+            <strong>Vennela Varshini</strong>
+            <small class="text-muted">1d</small>
+          </div>
+          <div class="text-warning">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <p class="text-muted mb-0">Amazing experience!..Sounds pretty good and Worth a Try..</p>
+        </div>
+      </div>
+    </div>
+    </div>
+      <p class="text-center text-muted" id="emojiFeedback"></p>
+    </div>
+  </div></div>
+  <div id="feedback-section" class="d-flex justify-content-center align-items-center">
+    <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg" alt="User Image">
+    <div id="feedback-input">
+      <textarea id="feedback" rows="5" placeholder="Share your valid feedback"></textarea>
+      <button class="btn btn-primary mt-3" onclick="submitFeedback()">Submit Feedback</button>
+    </div>
+  </div>
+  <button id="appendTextBtn"></button>
+  <div id="reviewsContainer"></div>
+<script>
+  function submitFeedback() {
+    const feedbackText = document.getElementById("feedback").value.trim();
+  
+    if (feedbackText === "") {
+      alert("Please provide some feedback before submitting!");
+      return;
+    }
+  
+    const username = window.prompt("Please enter your username:");
+  
+    if (username) {
+      
+      const confirmSubmit = confirm("Are you sure you want to submit your feedback?");
+      
+      if (confirmSubmit) {
+        
+        const reviewsSection = document.querySelector("#reviews2 .card");
+  
+        
+        const reviewDiv = document.createElement("div");
+        reviewDiv.classList.add("d-flex", "mb-3");
+  
+        
+        const profileImage = document.createElement("img");
+        profileImage.src = "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.1.1908571217.1697457883&semt=ais_hybrid";
+        profileImage.alt = "User Image";
+        profileImage.height = "55";
+        profileImage.classList.add("rounded-circle", "me-3");
+  
+        const reviewContentDiv = document.createElement("div");
+  
+        
+        const headerDiv = document.createElement("div");
+        headerDiv.classList.add("d-flex", "justify-content-between");
+        const usernameElem = document.createElement("strong");
+        usernameElem.innerText = username;
+        const timeElem = document.createElement("small");
+        timeElem.classList.add("text-muted");
+        timeElem.innerText = "1d"; 
+        headerDiv.appendChild(usernameElem);
+        headerDiv.appendChild(timeElem);
+  
+        
+        const reviewText = document.createElement("p");
+        reviewText.classList.add("text-muted", "mb-0");
+        reviewText.innerText = feedbackText;
+  
+        
+        reviewContentDiv.appendChild(headerDiv);
+        reviewContentDiv.appendChild(reviewText);
+  
+        
+        reviewDiv.appendChild(profileImage);
+        reviewDiv.appendChild(reviewContentDiv);
+  
+        reviewsSection.appendChild(reviewDiv);
+  
+        
+        document.getElementById("feedback").value = "";
+        document.getElementById("emojiFeedback").innerText = ""; 
+        alert("Thank you for your feedback!");
+      }
+    } else {
+      alert("Username is required to submit the feedback!");
+    }
+  }
+  
+  document.getElementById("feedback").addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+      document.getElementById("feedback").value = "";
+      document.getElementById("emojiFeedback").innerText = "";
+    }
+  });
+  
+</script>
+
+</body>
+</html>
