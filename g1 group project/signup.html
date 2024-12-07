@@ -1,126 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="login.css">
-   <!-- <script src="confirm.js"></script>-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link rel="icon" href="echomix.jpeg" type="image/x-icon">
-   
+    <title>Upload Song</title>
     <style>
-        body{
-            background-image: url(backgroundlogin.png);
-            
+        body {
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            background-image: linear-gradient(135deg, rgb(90, 5, 90), black, rgb(27, 27, 107));
+            /background-image: url('bgimg.jpg');/
             background-size: cover;
-            width: fit-content;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+        #head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+            background-color: rgb(132, 135, 135);
+            padding: 0 20px;
+            box-shadow: 0 5px 10px rgba(21, 53, 13, 0.5);
+            border-radius: 10px;
+        }
+        #head img {
+            border-radius: 50%;
+
+        }
+        #name {
+            font-size: 28px;
+            font-style: italic;
+            font-weight: bold;
+            color: white;
+            margin-left: 15px;
+            text-shadow: 2px 2px 5px black;
+            transition: color 0.3s ease;
+        }
+        #name:hover {
+            color: rgb(61, 62, 62);
+        }
+        #details {
+            color: white;
             text-align: center;
-            display:inline-block;
-            margin-left:23%;
-            
+            font-size: 18px;
+            font-style: italic;
+            margin-top: 20px;
         }
-        h2{
-            color:white;
-        }
+        #box {
+            width: 600px;
+             background-color: rgba(255, 255, 255, 0.2);
+            text-align: center;
+            border-radius: 15px;
+            margin: 50px auto;
+            padding: 40px;
+            box-shadow: 5px 5px 15px rgba(128, 0, 128, 0.8), -5px -5px 15px rgba(30, 30, 154, 0.8);
+            color: white;
+             position: relative;
+            height: auto; /* This will allow the box to grow based on the content */
+}
 
-        footer{
-            margin-bottom: 10px;
-            align-items: end;
+        #box label {
+            width: 150px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px 3px black;
         }
-        #button{
-        
-            height: 35px;
-            width: 200px;
-            background: #fff;
+        #box input[type="text"], #box input[type="email"], #box input[type="password"], #box input[type="file"] {
+            width: 80%;
+            padding: 15px;
+            margin-bottom: 25px;
             border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.3), inset -3px -3px 5px rgba(255, 255, 255, 0.1);
             outline: none;
-            border-radius: 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+        }
+        #box button {
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 15px;
+            background-color: rgb(90, 127, 144);
+            color: white;
             cursor: pointer;
-            font-size: 16px;
-            color: black;
-            font-weight: 600;
-
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
-        #button:hover{
-            opacity: 60%;
+        #box button:hover {
+            background-color: rgb(110, 86, 107);
+            transform: scale(1.1);
         }
-       #ee{
-        color: black;
-       }
         
-
+        @media (max-width: 768px) {
+            #box {
+                width: 90%;
+                padding: 20px;
+            }
+            #box input[type="text"], #box input[type="email"], #box input[type="password"], #box input[type="file"] {
+                width: 90%;
+            }
+        }
+        #img{
+            border-radius: 50%;
+            margin-left: 650px;
+        }
+        #last{
+            color: white;
+            margin-left: 700px;
+            font-size: larger;
+            position: relative;
+            margin-bottom: 30px;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1 style="color: rgb(8, 125, 227);"><img src="logo.jpeg" style="height:140px; width: 160px; border-radius: 50%;"Linked></h1>
-        <h2 id="bb">
-            One stop destination for all your music requirements!
-        </h2>
-    </header>
-    <main>
-        <form class="form" id="aa">
-        <p1 style="font-size: 20px; color: white;" ><b>Full Name</b></p1><br>
-        <input type="text" placeholder="Enter Your Full Name" required size="35px" id="input"><br><br>  
+    
+        <div id="imgbox">
+            <img id="img" src="logo.jpeg" height="180px" width="180px">
+        </div>
+        <div id="details">
+            <h1>One stop destination for all your music requirements</h1>
+        </div>
+    
+    <div id="box">
+        <form id="songForm">
+            <label for="title">Fullname:</label>
+            <input type="text" placeholder="Enter Your Fullname" id="fullname"><br>
+            <label for="lastname">Lastname:</label>
+            <input type="text" placeholder="Enter Your Lastname" id="lastname"><br>
+            <label for="email">Email:</label>
+            <input type="email" placeholder="Enter Your Email" id="email"><br>
+            <label for="password">Password:</label>
+            <input type="password" placeholder="Enter Your Password" id="password"><br>
+            <label for="password">Confirm Password:</label>
+            <input type="password" placeholder="Enter Your Password" id="password"><br>
+            <input type="checkbox"><b>you agree to the ECHOMIX UserAgreement, Privacy Policy and Cookie Policy</b><br><br>
+            <button type="button" id="button">Sign Up</button><br/><br>
+            ALready on ECHOMIX? <a href="#">Sign in</a>
+        </form>
+    </div>
+    <div id="last">      ECHOMIX © 2024</div>
+    
 
-        <p1 style="font-size: 20px;color: white;"><b>User Name</b></p1><br>
-        <input type="text" placeholder="Enter User Name" required size="35px" id="input"><br><br>
+    <script>
+        const button = document.getElementById('button');
+        button.addEventListener('click', () => {
+            const fullname = document.getElementById('fullname').value;
+            const lastname = document.getElementById('lastname').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
 
-        <p1 style="font-size: 20px; color: white;" ><b>Email</b></p1><br>
-        <input type="email" placeholder="xyz123@gmail.com" required size="35px" id="input"><br><br>
-        
-        
-        <p1 style="font-size: 20px; color: white;"><b>Password</b></p1><br>
-        <input type="password" placeholder="Password"required size="27px" id="password">
-        <input type="checkbox" onclick="show1()">Show<br><br>
-
-        <script>
-            function show1() {
-             var x = document.getElementById("password");
-                if (x.type === "password") {
-               x.type = "text";
-             } else {
-             x.type = "password";
-                }
+            if (fullname && lastname && email && password) {
+                alert(Successfully uploaded the song! Welcome, ${fullname} ${lastname});
+            } else {
+                alert("Please fill in all the fields before uploading!");
             }
-        </script>
-
-        <p1 style="font-size: 20px; color: white;"><b>Confirm Password</b></p1><br>
-        <input type="password" placeholder="Confirm Password" required size="27px" id="confirm_password"> 
-        <input type="checkbox" onclick="show2()"><b>Show</b><br><br><br>
-
-
-        <script>
-            function show2() {
-             var x = document.getElementById("confirm_password");
-                if (x.type === "password") {
-               x.type = "text";
-             } else {
-             x.type = "password";
-                }
-            }
-        </script>
-        
-        
-        <input type="checkbox" required>
-        <p1 style="font-size: 23px; " id="ee"><b>You agree to the ECHOMIX</b> <b>User Agreement,Privacy Policy</b> and <b>Cookie Policy.</b></p1><br><br>
-        
-        <div class="submit">
-            <!--<input id="button" type ="submit" value="Login "  ><br><br>-->
-            <button type="submit" id="button" onclick="window.location.href='wdaproject.html'" ><b>Sign up</b></button>
-        </div><br>
-        <p1 id="dd" style="font-size: 20px;">Already on Echomix? <a href="login.html" id="a">Sign in</a></p1>
-        
-        
-        </form><br>
-        
-        <footer><p1 id="cc"><br><br>
-           <b ><big>ECHOMIX ©️ 2024</big></b>
-        </p1>
-        </footer>
-
-    </main>
-
+        });
+    </script>
 </body>
 </html>
