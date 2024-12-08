@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Song</title>
+    <title>Sign Up</title>
     <style>
         body {
             margin: 0;
             height: 100vh;
             width: 100vw;
             background-image: linear-gradient(135deg, rgb(90, 5, 90), black, rgb(27, 27, 107));
-            /background-image: url('bgimg.jpg');/
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -83,6 +82,7 @@
             box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.3), inset -3px -3px 5px rgba(255, 255, 255, 0.1);
             outline: none;
         }
+
         #box button {
             padding: 15px 30px;
             font-size: 20px;
@@ -133,38 +133,80 @@
     
     <div id="box">
         <form id="songForm">
-            <label for="title">Fullname:</label>
-            <input type="text" placeholder="Enter Your Fullname" id="fullname"><br>
+            <label for="title">Firstname:</label>
+            <input type="text" placeholder="Enter Your Firstname" id="firstname"><span style="color: transparent;">showww</span><br>
             <label for="lastname">Lastname:</label>
-            <input type="text" placeholder="Enter Your Lastname" id="lastname"><br>
+            <input type="text" placeholder="Enter Your Lastname" id="lastname"><span style="color: transparent;">showww</span><br>
             <label for="email">Email:</label>
-            <input type="email" placeholder="Enter Your Email" id="email"><br>
+            <input type="email" placeholder="Enter Your Email" id="email"><span style="color: transparent;">showww</span><br><span id="emailError"></span><br>
             <label for="password">Password:</label>
-            <input type="password" placeholder="Enter Your Password" id="password"><br>
+            <input type="password" placeholder="Enter Your Password" id="password"><input type="checkbox" onclick="show1()">Show<br><br>
             <label for="password">Confirm Password:</label>
-            <input type="password" placeholder="Enter Your Password" id="password"><br>
-            <input type="checkbox"><b>you agree to the ECHOMIX UserAgreement, Privacy Policy and Cookie Policy</b><br><br>
-            <button type="button" id="button">Sign Up</button><br/><br>
-            ALready on ECHOMIX? <a href="#">Sign in</a>
+            <input type="password" placeholder="Enter Your Password" id="confirm_password"><input type="checkbox" onclick="show2()"><b>Show</b><br><br>
+            
+            
+            <span id="passwordError"></span>
+            <input type="checkbox" id="termsCheckbox"><b>you agree to the ECHOMIX UserAgreement, Privacy Policy and Cookie Policy</b><br>
+            <span id="checkboxError"></span><br><br>
+            <button type="button" id="button" onclick="check()">Sign Up</button><br/><br>
+            ALready on ECHOMIX? <a href="signin.html" style="color:cyan;">Sign in</a>
         </form>
     </div>
     <div id="last">      ECHOMIX © 2024</div>
     
 
     <script>
-        const button = document.getElementById('button');
-        button.addEventListener('click', () => {
-            const fullname = document.getElementById('fullname').value;
-            const lastname = document.getElementById('lastname').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            if (fullname && lastname && email && password) {
-                alert(Successfully uploaded the song! Welcome, ${fullname} ${lastname});
+        function show1() {
+            var x = document.getElementById("password");
+               if (x.type === "password") {
+              x.type = "text";
             } else {
-                alert("Please fill in all the fields before uploading!");
+            x.type = "password";
+               }
+           }
+        function show2() {
+            var x = document.getElementById("confirm_password");
+               if (x.type === "password") {
+              x.type = "text";
+            } else {
+            x.type = "password";
+               }
+           }
+        function check() {
+                 
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirm_password').value;
+                const checkbox = document.getElementById('termsCheckbox').checked;
+
+                
+                document.getElementById('emailError').innerText = '';
+                document.getElementById('passwordError').innerText = '';
+                document.getElementById('checkboxError').innerText = '';
+
+                
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    document.getElementById('emailError').innerText = 'Invalid email address.';
+                    return;
+                }
+
+                
+                if (password !== confirmPassword) {
+                    document.getElementById('passwordError').innerText = 'Passwords do not match.';
+                    return;
+                }
+
+                
+                if (!checkbox) {
+                    document.getElementById('checkboxError').innerText = 'You must agree to the terms and conditions.';
+                    return;
+                }
+
+                
+                alert('Form submitted successfully!');
+                window.location.href = 'wdaproject.html';
             }
-        });
     </script>
 </body>
 </html>

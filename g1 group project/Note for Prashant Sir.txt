@@ -1,0 +1,11 @@
+Contributions by each team member:-
+1.Raja Hasini-About Us Page, Features Page
+2.Hansika Reddy-About Us Page, Features Page
+3.Vennela Varshini Anasoori-Upload Song, Theme for the site
+4.Pagadala Sindhuja-Rate Us Page, javascript for rateus page
+5.Abhinav Neema- Song cards, javascript for login and signup Page
+6.Akash Thakur- Profile Page
+7.Prasoon Patel- Homepage, Playlist Page
+8.Parth khunt- Sign In Page, Login Page
+9.Panmand Pranav Santosh- Playlist Pages
+10.Gourav Kumar- Homepage, Contact Us Page

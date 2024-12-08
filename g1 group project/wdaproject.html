@@ -24,10 +24,11 @@
             margin-top: 20px;
             height: 75px;
             width: 99%;
-            background-color: rgb(188,181,181);
+
+            border: 2px solid  rgb(0, 0, 0) ;
+            background-color:rgb(188,181,181); ;
             border-radius: 10px;
-            background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3cd770b2-3e49-4672-99fb-8483b9dd9bf0/dg2jzjx-09688ae9-5e0c-4ee5-9d25-7883937eae3f.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNjZDc3MGIyLTNlNDktNDY3Mi05OWZiLTg0ODNiOWRkOWJmMFwvZGcyanpqeC0wOTY4OGFlOS01ZTBjLTRlZTUtOWQyNS03ODgzOTM3ZWFlM2YucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.iwFvYJ7UOMKb8rYfAhGxBG3-yCOrw4qixMtg7SLAlXI);
-            background-size: cover;
+
         }
         #searchBar{
             position: absolute;
@@ -392,7 +393,6 @@
         justify-content: space-between;
         height: 400px;
         width: 730px;
-        background-color: rgb(33, 33, 56);
         left: 25%;
         top: 53%;
         border: 2px solid white;
@@ -401,7 +401,7 @@
         overflow-y:scroll;
         text-decoration: none;
         color: white;
-
+        background-color: radical-gradient(circle,rgb(134, 19, 84),rgb(134, 23, 153));
     }
     #recommendation::-webkit-scrollbar{
         display: none;
@@ -488,7 +488,7 @@
         <div id="main">
             <div id="logo"></div>
             <div id="logoname">ECHOMIX</div>
-            <a href="wdaupload.html" target="_blank"><div id="upload">Upload</div>
+            <a href="upload.html" target="_blank"><div id="upload">Upload</div>
             <input type="text" name="searchBar" id="searchBar" value="" placeholder="Search">
             
             <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -497,21 +497,21 @@
     </header>
    <div id="genre">
         <div class="genre-slide">
-        <a href="#" target="_blank"><div id="trendingsongs" class="genres"></a></div>
+        <a href="trendingsongs.html" target="_blank"><div id="trendingsongs" class="genres"></a></div>
         
-        <a href="#" target="_blank"><div id="hits_90" class="genres"></div></a>
-        <a href="#" target="_blank"><div id="bollywood" class="genres">
+        <a href="90hits.html" target="_blank"><div id="hits_90" class="genres"></div></a>
+        <a href="bollywoodsongs.html" target="_blank"><div id="bollywood" class="genres">
         </div></a>
-        <a href="#" target="_blank"><div id="tollywoodcentre" class="genres"></div></a>
-        <a href="#" target="_blank"><div id="globalpearl" class="genres"></div></a>
+        <a href="tollywoodcenter.html" target="_blank"><div id="tollywoodcentre" class="genres"></div></a>
+        <a href="globalpearl.html" target="_blank"><div id="globalpearl" class="genres"></div></a>
      </div>
      <div class="genre-slide">
-        <a href="#" target="_blank"><div id="trendingsongs" class="genres"></div></a>
-        <a href="#" target="_blank"><div id="hits_90" class="genres"></div></a>
-        <a href="#" target="_blank"><div id="bollywood" class="genres">
+        <a href="trendingsongs.html" target="_blank"><div id="trendingsongs" class="genres"></div></a>
+        <a href="90hits.html" target="_blank"><div id="hits_90" class="genres"></div></a>
+        <a href="bollywoodsongs.html" target="_blank"><div id="bollywood" class="genres">
         </div></a>
-        <a href="#" target="_blank"><div id="tollywoodcentre" class="genres"></div></a>
-        <a href="#" target="_blank"><div id="globalpearl" class="genres"></div></a>
+        <a href="tollywoodcenter.html" target="_blank"><div id="tollywoodcentre" class="genres"></div></a>
+        <a href="globalpearl.html" target="_blank"><div id="globalpearl" class="genres"></div></a>
      </div>
 
      
@@ -521,10 +521,10 @@
 <div id="playlistContainer">
     <div id="phead">Your Playlists</div>
     <div id="playlist1"><a href=" #" id="play1">Playlist 1</a>
-    <div id="songs1">
-        <ul>
-            <li><a href="song/song10.html">We-wish-you-a-merry-christmas</a> </li>
-            <li><a href="song/song11.html">Tum Jo Mile Ho</a> </li>
+    <div id="songs1" >
+        <ul >
+            <li><a href="song/song10.html" style="color:cyan" >We-wish-you-a-merry-christmas</a> </li>
+            <li><a href="song/song11.html" style="color:cyan">Tum Jo Mile Ho</a> </li>
             <li>Add more➕</li>
             <li>Delete➖</li>
         </ul>
@@ -534,7 +534,7 @@
         <a href=" #" id="play2">Playlist 2</a>
     <div id="songs2">
         <ul>
-            <li><a href="song/song12.html">Raanjhan Do Patti</a> </li>
+            <li><a href="song/song12.html" style="color:cyan">Raanjhan Do Patti</a> </li>
             <li>Add more➕</li>
             <li>Delete➖</li>
         </ul>
@@ -544,9 +544,9 @@
     </div>
     <div id="historycontainer">
     <div id="historyheading"> Your History</div>
-    <div id="song1"><a href="song/song1.html" id="historysong1">O Mahi O Mahi</a></div>
-    <div id="song2"><a href="song/song2.html" id="historysong2">Hauli Hauli</a></div>
-    <div id="song3"><a href="song/song3.html" id="historysong3">Mere Mehboob Mere Sanam</a></div>
+    <div id="song1"><a href="song/song1.html" id="historysong1" style="color:cyan">O Mahi O Mahi</a></div>
+    <div id="song2"><a href="song/song2.html" id="historysong2" style="color:cyan">Hauli Hauli</a></div>
+    <div id="song3"><a href="song/song3.html" id="historysong3" style="color:cyan">Mere Mehboob Mere Sanam</a></div>
     </div>
     <div id="recommendation">
         <div id="rhead">Recommended Songs</div>
