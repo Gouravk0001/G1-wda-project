@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Song</title>
+    <title>Sign In</title>
     <style>
         body {
             margin: 0;
             height: 100vh;
             width: 100vw;
             background-image: linear-gradient(135deg, rgb(90, 5, 90), black, rgb(27, 27, 107));
-            /background-image: url('bgimg.jpg');/
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
+            overflow-x: hidden;
+            overflow-y: scroll;
         }
+        #body::-webkit-scrollbar{
+            display:none;
+        }
+
         #head {
             display: flex;
             align-items: center;
@@ -30,6 +35,7 @@
         }
         #head img {
             border-radius: 50%;
+    
         }
         #name {
             font-size: 28px;
@@ -133,15 +139,18 @@
     <div id="box">
         <form id="songForm">
             <label for="title">Username:</label>
-            <input type="text" placeholder="Enter Your Fullname" id="fullname"><br>
+            <input type="text" placeholder="Enter Your Fullname" id="username"><span style="color: transparent;">showww</span><br>
             
             <label for="email">Email:</label>
-            <input type="email" placeholder="Enter Your Email" id="email"><br>
+            <input type="email" placeholder="Enter Your Email" id="email"><span style="color: transparent;">showww</span><br><br>
+            <span id="emailError"></span><br>
             <label for="password">Password:</label>
-            <input type="password" placeholder="Enter Your Password" id="password"><br>
+            <input type="password" placeholder="Enter Your Password" id="password"><input type="checkbox" onclick="show1()">Show<br><br>
             
-            <input type="checkbox"><b>you agree to the ECHOMIX UserAgreement, Privacy Policy and Cookie Policy</b><br><br>
-            <button type="button" id="button">Sign In</button><br/><br>
+            <input type="checkbox" id="termsCheckbox"><b>you agree to the ECHOMIX UserAgreement, Privacy Policy and Cookie Policy</b>
+            <span id="checkboxError"></span>
+            <br><br>
+            <button type="button" onclick="check()" id="button">Sign In</button><br/><br>
             
         </form>
     </div>
@@ -149,19 +158,44 @@
     
 
     <script>
-        const button = document.getElementById('button');
-        button.addEventListener('click', () => {
-            const fullname = document.getElementById('fullname').value;
-            const lastname = document.getElementById('lastname').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            if (fullname && lastname && email && password) {
-                alert(Successfully uploaded the song! Welcome, ${fullname} ${lastname});
-            } else {
-                alert("Please fill in all the fields before uploading!");
+        
+            function show1() {
+             var x = document.getElementById("password");
+                if (x.type === "password") {
+               x.type = "text";
+             } else {
+             x.type = "password";
+                }
             }
-        });
+            function check(){
+                const email = document.getElementById('email').value;
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                const checkbox = document.getElementById('termsCheckbox').checked;
+            
+                
+                document.getElementById('emailError').innerText = '';
+                document.getElementById('checkboxError').innerText = '';
+            
+                
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    document.getElementById('emailError').innerText = 'Please enter a valid email address.';
+                    return;
+                }
+            
+                
+                if (!checkbox) {
+                    document.getElementById('checkboxError').innerText = 'You must agree to the terms and conditions.';
+                    return;
+                }
+            
+                
+                
+                alert('Sign up successful!');
+                window.location.href = 'wdaproject.html';
+            
+                }
     </script>
 </body>
 </html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echomix - Music Website</title>
+    <link rel="icon" href="logo.jpeg" type="image/x-icon">
+    <style>
+       
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-y: scroll;
+
+            color: white;
+            text-align: center;
+        }
+        body::-webkit-scrollbar{
+            display: none;
+        }
+        h1{
+            font-size:50px ;
+            font-weight: bolder;
+
+                    }
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -2;
+            object-fit: cover; 
+        }
+         .logo{
+           border-radius: 50%;
+           height: 50px;
+           width: 50px;
+           border-style: double;
+           border: 2px double white;
+
+         }
+
+        
+
+        header {
+            background-color: #000080; 
+            padding: 30px;
+            font-size: 60px;
+            font-weight: bolder;
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .container {
+            padding: 0px;
+            padding-bottom: 0px;
+        }
+
+        .playlist {
+            
+            display: flex;
+          
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+         
+            
+        }
+        .social{
+            position: sticky;
+            z-index: -1;
+            
+        }
+        
+        .zigzag
+        { margin-top: 10px;
+            height: 50px;
+            width: 100%;
+            background-color:transparent;
+           font-size: xx-large;
+           display: flex;
+           justify-content: space-evenly;
+           animation: big 2s linear 1s infinite normal;
+        }
+        @keyframes big{
+            100%{
+                transform: scale(1,1);
+                transform: skew(5deg);
+            }
+        }
+
+        .a{
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            border-style: double;
+            border: 2px double white;
+            background-color: #F3C623;
+            border-top: 3px solid #FF9933;
+           border-left:3px solid   #FFFFFF;
+           border-right:3px solid   #FFFFFF;
+           border-bottom: 3px solid #138808;
+           animation: a 0.5s linear 1s infinite normal;
+        }
+        @keyframes a{
+            50%{background-image: url("flag.png");
+        background-size: auto;}
+            100%{background-color: #F90716;}
+        }
+        .b{ border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            border-style: double;
+            border: 2px double white;
+            background-color: #5356FF;
+            border-top: 3px solid #FF9933;
+           border-left:3px solid   #FFFFFF;
+           border-right:3px solid   #FFFFFF;
+           border-bottom: 3px solid #138808;
+           animation: b 0.5s linear 1s infinite normal;
+        }
+        @keyframes b{
+            50%{background-color: #F90716;}
+            100%{background-color: #37407b;}
+        }
+        .c{
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            border-style: double;
+            border: 2px double white;
+            background-color: #750E21;
+            border-top: 3px solid #FF9933;
+           border-left:3px solid   #FFFFFF;
+           border-right:3px solid   #FFFFFF;
+           border-bottom: 3px solid #138808;
+           animation: c 0.6s linear 1s infinite normal;
+           }
+           @keyframes c{
+            50%{
+    background-color: #DB005B;}
+            100%{background-color: #F90716;}
+        }
+        .d{
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            border-style: double;
+            border: 2px double white;
+            background-color: #6D67E4;
+            border-top: 3px solid #FF9933;
+           border-left:3px solid   #FFFFFF;
+           border-right:3px solid   #FFFFFF;
+           border-bottom: 3px solid #138808;
+           animation: d 0.6s linear 1s infinite normal;
+        }
+        @keyframes d{
+            50%{background-color: #DB005B;}
+            100%{background-color: #3d8161;}
+        }
+        .e{
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            border-style: double;
+            border: 2px double white;
+            background-color: #00FF9C;
+            border-top: 3px solid #FF9933;
+           border-left:3px solid   #FFFFFF;
+           border-right:3px solid   #FFFFFF;
+           border-bottom: 3px solid #138808;
+           animation: e 0.4s linear 1s infinite normal;
+        }
+        @keyframes e{
+            50%{background-color: #601dd5;}
+            100%{background-color: #8da427;}
+        }
+        .f{
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            border-style: double;
+            border: 2px double white;
+            background-color: #EB8317;
+            border-top: 3px solid #FF9933;
+           border-left:3px solid   #FFFFFF;
+           border-right:3px solid   #FFFFFF;
+           border-bottom: 3px solid #138808;
+           animation: f 0.8s linear 1s infinite normal;
+        }
+        @keyframes f{
+            50%{background-color: #544e49;}
+            100%{background-color: #4713c8;}
+        }
+    .g{
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        border-style: double;
+        border: 2px double white;
+        background-color: #433878;
+        border-top: 3px solid #FF9933;
+       border-left:3px solid   #FFFFFF;
+       border-right:3px solid   #FFFFFF;
+         border-bottom: 3px solid #138808;
+         animation: g 0.5s linear 1s infinite normal;
+    }
+    @keyframes g{
+        50%{background-color: #c1b925;}
+        100%{background-color: #d31e1e;}
+    }
+    .h{
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        border-style: double;
+        border: 2px double white;
+        background-color: #DB005B;
+        border-top: 3px solid #FF9933;
+        border-left:3px solid   #FFFFFF;
+        border-right:3px solid   #FFFFFF;
+        border-bottom: 3px solid #138808;
+        animation: h 0.5s linear 1s infinite normal;
+    }
+    @keyframes h{
+        50%{background-color: #39118f;}
+        100%{background-color: #dfb21e;}
+    }
+    .i{
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        border-style: double;
+        border: 2px double white;
+        background-color: #F2CD5C;
+        border-top: 3px solid #FF9933;
+        border-left:3px solid   #FFFFFF;
+        border-right:3px solid   #FFFFFF;
+        border-bottom: 3px solid #138808;
+        animation: i 0.5s linear 1s infinite normal;
+    }
+    @keyframes i{
+        50%{background-color: #15b007;}
+        100%{background-color: #069299;}
+    }
+    .j{
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        border-style: double;
+        border: 2px double white;
+        background-color: #F90716;
+        border-top: 3px solid #FF9933;
+        border-left:3px solid   #FFFFFF;
+        border-right:3px solid   #FFFFFF;
+        border-bottom: 3px solid #138808;
+        animation: j 0.3s linear 1s infinite normal;
+    }
+    @keyframes j{
+        50%{background-color: #DB005B;}
+        100%{background-color: #3d8161;}
+    }
+
+        .song {
+           
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            width: 200px;
+           
+            padding: 20px;
+            text-align: center;
+        }
+
+        .song img {
+            width: 100%;
+            
+            border-radius: 10px;
+            cursor: pointer;  
+        }
+
+        .song h3 {
+            font-size: 20px;
+            color: black;
+            margin: 10px 0;
+        }
+
+        .song p {
+            font-size: 16px;
+            color: black;
+        }
+
+        audio {
+            margin-top: 10px;
+            width: 100%;
+            
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #000080;
+            color: white;
+        }
+        .social
+        {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .end{
+            margin-left: 650px;
+            margin-top: 200px;
+            
+        }
+        .linl
+        {
+            text-decoration: none;
+            color: white;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    
+         <audio autoplay src="autoname.mp3">
+    
+         </audio>
+
+    <video autoplay muted loop class="video-bg">
+        <source src="background video.mp4" type="video/mp4">
+        
+    </video>
+    
+    <header>
+         <img class="logo" src="headphones.jpeg" alt="headphones">
+        <img  class="logo" src="logo.jpeg" alt="logo" height="50px" width="50px" >
+        &#127925;ECHOMIX&#127925;
+         
+        <img class="logo" src="logo.jpeg" alt="logo" height="50px" width="50px" >
+        <img class="logo" src="headphones.jpeg" alt="headphones">
+    </header>
+    <div class="zigzag">
+        <div class="a">&#127925;</div>
+        <div class="b">🎶</div>
+        <div class="c">&#127929;</div>
+        <div class="d">&#127931;</div>
+        <div class="e">&#127908;</div>
+        <div class="f">&#128251;</div>
+        <div class="g">&#127931;</div>
+        <div class="h">&#127929;</div>
+        <div class="i">🎶</div>
+        <div class="j">&#127925;</div>
+    </div>
+
+    
+    <div class="container">
+        <h1>   𝐓𝐫𝐞𝐧𝐝𝐢𝐧𝐠 𝐒𝐨𝐧𝐠𝐬             
+            </h1>
+           
+        <div class="playlist">
+            
+            <div class="song">
+                <img src="o mhai.jpeg" alt="Song Image">
+                <h3> O MAHI O MAHI....</h3>
+                <p>Arijit Singh</p>
+                
+                <audio controls>
+                    <source src="omahi.mp3" type="audio/mpeg">
+                    
+                </audio>
+           
+            </div>
+
+           
+            <div class="song">
+                <img src="zaalim.jpg" alt="Song Image">
+                <h3>zalim</h3>
+                <p>Badshah</p>
+                
+                <audio controls>
+                    <source src="128-Zaalim - Badshah 128 Kbps.mp3" type="audio/mpeg">
+                  </audio>
+                
+            </div>
+
+            
+            <div class="song">
+                <img src="saiyaan dheere dheere.jpg" alt="Song Image">
+                <h3>Saiyaan dheere dheere</h3>
+                <p>Tony Kakkar</p>
+              
+                <audio controls>
+                    <source src="128-Saiyaan Dheere Dheere - Tony Kakkar 128 Kbps.mp3" type="audio/mpeg">
+                    </audio>
+               
+             </div>
+
+             <div class="song">
+                <img src="sukriya.jpg" alt="Song Image">
+                <h3>Sukriya</h3>
+                <p>Saaj Bhatt</p>
+                
+                <audio controls>
+                    <source src="128-Sukriya - Saaj Bhatt 128 Kbps.mp3" type="audio/mpeg">
+                    
+                </audio>
+            
+                
+            </div>
+
+            <div class="song">
+                <img src="tum jo mile ho vicky.jpg" alt="Song Image">
+                <h3>Tum jo mile ho </h3>
+                <p>Vishal Mishra</p>
+                
+                <audio controls>
+                    <source src="Tum Jo Mile Ho Vicky Vidya Ka Woh Wala Video 128 Kbps.mp3" type="audio/mpeg">
+                    
+                </audio>
+                
+            </div>
+
+            <div class="song">
+                <img src="team india hai hum.jpg" alt="Song Image">
+                <h3>Team India hai hum</h3>
+                <p>A R Rahaman</p>
+                <audio controls>
+                    <source src="128-Team India Hain Hum - Maidaan 128 Kbps.mp3" type="audio/mpeg">
+                    
+                </audio>
+                
+            </div>
+        </div>
+    </div>
+    <span class="end"><img src="echo.png" alt=""></span>
+    
+    <footer>
+        &copy; 2024 Echomix. All rights reserved.
+        <br>
+        "Unveiling ECHOMIX: Your Ultimate Sound Experience"
+        <br>
+        "Unleashing the Power of ECHOMIX: Revolutionizing Sound Technology"
+        <br>
+        "EchoMix: Harmonizing Innovation in Sound Technology"
+    </footer>
+    
+    <div class="social">
+        <a href="https://www.instagram.com/"><img src="insta.webp" alt="Instagram"  height="30px" width="30px"></a>
+        <a href="https://x.com/?lang=en"><img src="twitter.png" alt="Twitter" height="30px" width="30px"></a>
+        <a href="https://www.facebook.com/"><img src="facebook.png" alt="Facebook" height="30px" width="30px"></a>
+    </div>
+    <span> <a class="link" href="http://127.0.0.1:5500/trendingsongs.html"> MADE WITH&hearts; &hearts;&#9825;&hearts; </a> 
+        <br>
+        &hearts;&hearts;&hearts;
+        <br>
+        &hearts;&hearts;
+        <br>&hearts;
+    </span>
+    
+</body>
+</html>
